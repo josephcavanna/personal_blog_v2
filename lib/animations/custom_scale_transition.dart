@@ -12,7 +12,7 @@ class CustomScaleTransition extends StatefulWidget {
   final int index;
 
   @override
-  _CustomScaleTransitionState createState() => _CustomScaleTransitionState(const Duration(milliseconds: 2400));
+  _CustomScaleTransitionState createState() => _CustomScaleTransitionState(const Duration(milliseconds: 2500));
 }
 
 class _CustomScaleTransitionState

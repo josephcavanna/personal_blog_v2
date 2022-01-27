@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:personal_blog_v2/animations/custom_scale_transition.dart';
 import 'package:personal_blog_v2/animations/staggered_slide_transition.dart';
 import 'package:personal_blog_v2/components/about_content.dart';
 import 'package:personal_blog_v2/components/email_button.dart';
@@ -8,7 +7,6 @@ import 'package:personal_blog_v2/components/projects_list.dart';
 import 'package:personal_blog_v2/components/social_icons.dart';
 import 'package:personal_blog_v2/constants.dart';
 import 'package:personal_blog_v2/methods/height_constraint.dart';
-
 
 class DesktopContent extends StatelessWidget {
   const DesktopContent({
@@ -21,10 +19,13 @@ class DesktopContent extends StatelessWidget {
     double _height = MediaQuery.of(context).size.height;
     ProjectsList projectsList = ProjectsList();
 
-
     final List<Widget> projects = [];
     for (var projectListItem in projectsList.projectsList) {
-      projects.add(projectListItem);
+      projects.add(Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: projectListItem,
+      ),
+      );
     }
 
     return Row(
@@ -44,9 +45,13 @@ class DesktopContent extends StatelessWidget {
                   SizedBox(height: 25),
                   Material(
                       child: Text('Built with Flutter',
-                          style: Constants.kWithFlutter)),
-                  Material(child: Text('© 2022',
-                      style: Constants.kWithFlutter)),
+                          style: Constants.kWithFlutter,
+                      ),
+                  ),
+                  Material(
+                      child: Text('© 2022', style: Constants.kWithFlutter,
+                      ),
+                  ),
                 ],
               ),
             ),
@@ -55,37 +60,36 @@ class DesktopContent extends StatelessWidget {
         Expanded(
           flex: 2,
           child: Material(
-            child: Container(
-              color: Constants.kProjectsBackground,
-              child: Column(
-                children: [
-                  Container(
+            child: Column(
+              children: [
+                Container(
+                    color: Constants.kProjectsBackground,
                     padding: EdgeInsets.symmetric(horizontal: 15),
-                    width: _width * 3/4,
-                    height: _height * 2/3,
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                        child: Row(
-                            children: projects),
-                      ),
-                    )
-                    ),
-                  StaggeredSlideTransition(
-                    index: 5,
-                    width: _width * 3/4,
-                    child: Container(
-                      height: _height * 1/3,
-                      width: _width * 3/4,
-                      color: Colors.blueGrey.shade100,
-                      child: Center(
-                        child: HeightConstraint(low: Text('About', style: Constants.kProfileTitle),medium: AboutContent(), high: AboutContent(),),
+                    width: _width * 3 / 4,
+                    height: _height * 2 / 3,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: projects,
+                    )),
+                StaggeredSlideTransition(
+                  index: 5,
+                  width: _width * 3 / 4,
+                  child: Container(
+                    height: _height * 1 / 3,
+                    width: _width * 3 / 4,
+                    color: Colors.blueGrey.shade100,
+                    child: Center(
+                      child: HeightConstraint(
+                        low: Text(
+                            'About',
+                            style: Constants.kProfileTitle),
+                        medium: AboutContent(),
+                        high: AboutContent(),
                       ),
                     ),
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -93,4 +97,3 @@ class DesktopContent extends StatelessWidget {
     );
   }
 }
-

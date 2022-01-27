@@ -15,9 +15,7 @@ class About extends StatelessWidget {
             onPressed: () => Navigator.pop(context),),
         backgroundColor: Colors.blueGrey.shade500,
       ),
-      body: SingleChildScrollView(
-        child: AboutContent(),
-      ),
+      body: AboutContent(),
     );
   }
 }

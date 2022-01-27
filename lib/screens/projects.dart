@@ -7,6 +7,16 @@ class Projects extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ProjectsList projectsList = ProjectsList();
+    final List<Widget> projects = [];
+    for (var projectListItem in projectsList.projectsList) {
+      projects.add(
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 30.0),
+            child: projectListItem,
+          )
+      );
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text('Projects', style: TextStyle(color: Colors.white),),
@@ -18,8 +28,10 @@ class Projects extends StatelessWidget {
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 20),
-            child: Column(
-                children: ProjectsList().projectsList),
+            child: Center(
+              child: Column(
+                  children: projects),
+            ),
           ),
         ),
     );

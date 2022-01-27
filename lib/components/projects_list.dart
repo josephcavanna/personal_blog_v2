@@ -25,7 +25,7 @@ class ProjectsList {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               CustomScaleTransition(
-                index: 3,
+                index: 2,
                 child: MaterialButton(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -39,7 +39,7 @@ class ProjectsList {
               ),
               SizedBox(width: 10),
               CustomScaleTransition(
-                index: 4,
+                index: 3,
                 child: MaterialButton(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -56,8 +56,6 @@ class ProjectsList {
         ],
       ),
     ),
-    SizedBox(width: 50),
-    Divider(height: 60, thickness: 1),
     Container(
       width: 400,
       child: Column(

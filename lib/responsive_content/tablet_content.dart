@@ -26,7 +26,12 @@ class _TabletContentState extends State<TabletContent> {
 
     final List<Widget> projects = [];
     for (var projectListItem in projectsList.projectsList) {
-      projects.add(projectListItem);
+      projects.add(
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 30.0),
+            child: projectListItem,
+          )
+      );
     }
 
     return Row(
@@ -68,22 +73,14 @@ class _TabletContentState extends State<TabletContent> {
           flex: 2,
           child: Material(
             child: Container(
-              color: Colors.blueGrey.shade50,
-              child: Column(
-                children: [
-                  Container(
-                      padding: EdgeInsets.all(40),
-                      width: _width * 2/3 - 100,
-                      height: _height,
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.vertical,
-                        child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: projects),
-                      )
-                  )
-                ],
-              ),
+                color: Colors.blueGrey.shade50,
+                padding: EdgeInsets.all(40),
+                width: _width * 2/3 - 100,
+                height: _height,
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: projects,
+                )
             ),
           ),
         ),
