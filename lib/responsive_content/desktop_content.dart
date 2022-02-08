@@ -1,99 +1,47 @@
 import 'package:flutter/material.dart';
-import 'package:personal_blog_v2/animations/staggered_slide_transition.dart';
-import 'package:personal_blog_v2/components/about_content.dart';
-import 'package:personal_blog_v2/components/email_button.dart';
+import 'package:personal_blog_v2/animations/animation_controller_state.dart';
 import 'package:personal_blog_v2/components/profile.dart';
-import 'package:personal_blog_v2/components/projects_list.dart';
-import 'package:personal_blog_v2/components/social_icons.dart';
-import 'package:personal_blog_v2/constants.dart';
-import 'package:personal_blog_v2/methods/height_constraint.dart';
+import 'package:personal_blog_v2/screens/about.dart';
+import 'package:personal_blog_v2/screens/projects.dart';
+import 'package:personal_blog_v2/screens/standard_content.dart';
 
-class DesktopContent extends StatelessWidget {
-  const DesktopContent({
-    Key? key,
-  }) : super(key: key);
+class DesktopContent extends StatefulWidget {
+  const DesktopContent({Key? key}) : super(key: key);
+
+  @override
+  State<DesktopContent> createState() => _DesktopContentState(Duration(milliseconds: 1800));
+}
+
+class _DesktopContentState extends AnimationControllerState<DesktopContent> {
+  _DesktopContentState(Duration duration) : super(duration);
 
   @override
   Widget build(BuildContext context) {
-    double _width = MediaQuery.of(context).size.width;
-    double _height = MediaQuery.of(context).size.height;
-    ProjectsList projectsList = ProjectsList();
-
-    final List<Widget> projects = [];
-    for (var projectListItem in projectsList.projectsList) {
-      projects.add(Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: projectListItem,
+    return AnimatedContainer(
+      decoration: BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topRight,
+          end: Alignment.bottomLeft,
+          colors: [
+            Colors.pink,
+            Colors.orangeAccent,
+            Colors.deepPurple.shade700,
+          ],
+          stops: [
+            0.1 * animationController.value,
+            1000.0 * animationController.value,
+            2000.0 * animationController.value,
+          ],
+        ),
       ),
-      );
-    }
-
-    return Row(
-      children: [
-        Expanded(
-          flex: 1,
-          child: Container(
-            child: SingleChildScrollView(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Profile(),
-                  SizedBox(height: 35),
-                  EmailButton(),
-                  SizedBox(height: 25),
-                  SocialIcons(),
-                  SizedBox(height: 25),
-                  Material(
-                      child: Text('Built with Flutter',
-                          style: Constants.kWithFlutter,
-                      ),
-                  ),
-                  Material(
-                      child: Text('© 2022', style: Constants.kWithFlutter,
-                      ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-        Expanded(
-          flex: 2,
-          child: Material(
-            child: Column(
-              children: [
-                Container(
-                    color: Constants.kProjectsBackground,
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                    width: _width * 3 / 4,
-                    height: _height * 2 / 3,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: projects,
-                    )),
-                StaggeredSlideTransition(
-                  index: 5,
-                  width: _width * 3 / 4,
-                  child: Container(
-                    height: _height * 1 / 3,
-                    width: _width * 3 / 4,
-                    color: Colors.blueGrey.shade100,
-                    child: Center(
-                      child: HeightConstraint(
-                        low: Text(
-                            'About',
-                            style: Constants.kProfileTitle),
-                        medium: AboutContent(),
-                        high: AboutContent(),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
+      duration: animationDuration,
+      child: StandardContent(
+        blogPages: [
+          Profile(),
+          Projects(scrollDirection: Axis.horizontal),
+          About(),
+        ],
+      ),
     );
   }
 }

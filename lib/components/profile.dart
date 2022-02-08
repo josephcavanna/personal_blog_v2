@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_blog_v2/components/link_button.dart';
 import 'package:personal_blog_v2/constants.dart';
 
 class Profile extends StatelessWidget {
@@ -8,25 +9,30 @@ class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Constants.kProfileBackground,
+      color: Colors.transparent,
       child: Container(
           child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          CircleAvatar(
-              backgroundImage: AssetImage('images/profilePhoto.webp'),
-              backgroundColor: Colors.white,
-              radius: 125
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CircleAvatar(
+                  backgroundImage: AssetImage('images/profilePhoto.webp'),
+                  backgroundColor: Colors.white,
+                  radius: 125),
+              SizedBox(height: 35),
+              Text('FLUTTER DEVELOPER', style: Constants.kJobTitle),
+              SizedBox(height: 15),
+              Text(
+                'Joseph Cavanna',
+                style: Constants.kProfileTitle,
+              ),
+              SizedBox(height: 15),
+              LinkButton(
+                buttonText: 'info@jcavanna.dev',
+                url: 'mailto:<info@jcavanna.dev>?subject=&body=',
+              )
+            ],
           ),
-          SizedBox(height: 35),
-          Text('FLUTTER DEVELOPER', style: Constants.kJobTitle),
-          SizedBox(height: 15),
-          Text(
-            'Joseph Cavanna',
-            style: Constants.kProfileTitle,
-          ),
-        ],
-      )),
+      ),
     );
   }
 }

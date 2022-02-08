@@ -6,20 +6,14 @@ import '../methods/launch_url.dart';
 
 class SocialIcons extends StatelessWidget {
   const SocialIcons({
-    // required this.iconOneKey,
-    // required this.iconTwoKey,
-    // required this.iconThreeKey,
     Key? key
   }) : super(key: key);
-
-  // final GlobalKey<IconAnimatorState> iconOneKey;
-  // final GlobalKey<IconAnimatorState> iconTwoKey;
-  // final GlobalKey<IconAnimatorState> iconThreeKey;
 
   @override
   Widget build(BuildContext context) {
     double _iconSize = 20;
     return Material(
+      color: Colors.transparent,
       child: Container(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
@@ -28,7 +22,7 @@ class SocialIcons extends StatelessWidget {
             children: [
               StaggeredFadeTransition(
                 // key: iconOneKey,
-                index: 0,
+                index: 1,
                 child: IconButton(
                   icon: Icon(FontAwesomeIcons.twitter),
                   iconSize: _iconSize,
@@ -38,7 +32,7 @@ class SocialIcons extends StatelessWidget {
               ),
               SizedBox(width: 30),
               StaggeredFadeTransition(
-                index: 1,
+                index: 2,
                 // key: iconTwoKey,
                 child: IconButton(
                   icon: Icon(FontAwesomeIcons.github),
@@ -49,7 +43,7 @@ class SocialIcons extends StatelessWidget {
               ),
               SizedBox(width: 30),
               StaggeredFadeTransition(
-                index: 2,
+                index: 3,
                 // key: iconThreeKey,
                 child: IconButton(
                     icon: Icon(
