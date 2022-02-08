@@ -56,19 +56,23 @@ class ProjectCard extends StatelessWidget {
                       right: 15,
                       child: Text(description, textAlign: TextAlign.left, style: Constants.kProjectText,)),
                   Positioned(
-                    top: 130,
+                    top: 150,
                       left: 1,
                       right: 1,
                       child: Container(child: Center(child: preview),),
                   ),
                   Positioned(
-                    left: 75,
-                      right: 75,
-                      bottom: 70,
+                    left: 1,
+                      right: 1,
+                      bottom: 60,
                       child: linkButtonArea),
                   Positioned(
                     bottom: 15,
-                      child: Row(children: keywords))
+                      child: SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                          child: Row(children: keywords),
+                      ),
+                  ),
                 ],
               ),
             ),

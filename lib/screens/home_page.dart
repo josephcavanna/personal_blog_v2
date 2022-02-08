@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_blog_v2/methods/responsive.dart';
+import 'package:personal_blog_v2/responsive_content/mobile_content.dart';
 import '../responsive_content/desktop_content.dart';
 
 class HomePage extends StatefulWidget {
@@ -15,8 +16,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Responsive(
         desktop: DesktopContent(),
-        tablet: DesktopContent(),
-        mobile: DesktopContent(),
+        tablet: MobileContent(),
+        mobile: MobileContent(),
     );
   }
 }

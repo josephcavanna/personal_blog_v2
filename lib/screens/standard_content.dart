@@ -18,7 +18,7 @@ class StandardContent extends StatefulWidget {
 
 class _StandardContentState extends State<StandardContent> {
   int pageIndex = 0;
-  final double wordSpacing = 40;
+  final double wordSpacing = 20;
 
   @override
   Widget build(BuildContext context) {

@@ -39,8 +39,8 @@ class ProjectsList {
     ),
     ProjectCard(
       index: 1,
-      title: 'NaviBar flutter package',
-      description: 'A customizable bottom navigation bar using simple animations and theme colors that comes with a couple of presets.',
+      title: 'NaviBar package',
+      description: 'A customizable bottom navigation bar for Flutter using simple animations and theme colors that comes with a couple of presets.',
       preview: Image.asset("images/navibar.gif", width: 360, height: 80),
       linkButtonArea: CustomScaleTransition(
         index: 4,

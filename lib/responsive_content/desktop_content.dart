@@ -25,7 +25,7 @@ class _DesktopContentState extends AnimationControllerState<DesktopContent> {
           colors: [
             Colors.pink,
             Colors.orangeAccent,
-            Colors.deepPurple.shade700,
+            Colors.deepPurple,
           ],
           stops: [
             0.1 * animationController.value,

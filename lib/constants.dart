@@ -15,10 +15,10 @@ class Constants {
   static const kWithFlutter = TextStyle(fontSize: 14, color: Colors.white, backgroundColor: Colors.transparent);
   static const kEmailText = TextStyle(color: Colors.white);
   static const kHomePageText = TextStyle(
-      fontSize: 20,
+      fontSize: 16,
       color: Colors.white,
       fontWeight: FontWeight.w300,
-      letterSpacing: 5);
+      letterSpacing: 3);
 
   // backgrounds
   static const kProfileBackground = Colors.white;
