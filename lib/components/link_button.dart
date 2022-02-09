@@ -22,6 +22,7 @@ class _LinkButtonState extends State<LinkButton> {
     return Material(
       color: Colors.transparent,
       child: MaterialButton(
+        minWidth: 125,
         color: Colors.pink.shade400,
         hoverColor: Colors.pinkAccent,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),

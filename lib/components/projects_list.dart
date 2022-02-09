@@ -56,6 +56,6 @@ class ProjectsList {
         description: 'Newly designed personal website using the power of Flutter web',
         preview: FlutterLogo(size: 125,),
         linkButtonArea: Text(''),
-        index: 2, keywordStrings: ['Flutter web', 'responsive', 'custom animations'])
+        index: 2, keywordStrings: ['responsive', 'custom animations', 'flutter web', ])
   ];
 }

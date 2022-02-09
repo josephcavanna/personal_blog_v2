@@ -84,13 +84,10 @@ class _StandardContentState extends State<StandardContent> {
               ),
             ),
           ),
-          StaggeredFadeTransition(
-            index: 4,
-            child: StaggeredSlideTransition(
-                index: 3,
-                child: widget.blogPages[pageIndex],
-                width: 1),
-          ),
+          StaggeredSlideTransition(
+              index: 3,
+              child: widget.blogPages[pageIndex],
+              width: 1),
           StaggeredFadeTransition(
             index: 4,
             child: Material(
