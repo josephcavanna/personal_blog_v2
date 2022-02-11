@@ -11,7 +11,7 @@ class TabletContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return StandardContent(
         blogPages: [
-          Profile(),
+          Profile(radius: 200),
           Projects(scrollDirection: Axis.horizontal),
           About(),
         ],);

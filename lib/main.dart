@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_blog_v2/methods/custom_scroll_behavior.dart';
 import 'package:personal_blog_v2/screens/home_page.dart';
-import 'package:personal_blog_v2/components/profile.dart';
 import 'package:personal_blog_v2/screens/projects.dart';
 import 'screens/about.dart';
 
@@ -16,7 +15,6 @@ class MyApp extends StatelessWidget {
       scrollBehavior: CustomScrollBehavior(),
       home: HomePage(),
       routes: {
-        Profile.id: (context) => Profile(),
         Projects.id: (context) => Projects(),
         About.id: (context) => About(),
       },
