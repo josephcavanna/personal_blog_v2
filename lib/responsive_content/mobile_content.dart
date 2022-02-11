@@ -27,7 +27,7 @@ class MobileContent extends StatelessWidget {
       child: SingleChildScrollView(
         child: StandardContent(
           blogPages: [
-            Profile(),
+            Profile(radius: 150),
             Projects(scrollDirection: Axis.vertical),
             About(),
           ],

@@ -25,7 +25,7 @@ class DesktopContent extends StatelessWidget {
       ),
       child: StandardContent(
         blogPages: [
-          Profile(),
+          Profile(radius: 200,),
           Projects(scrollDirection: Axis.horizontal),
           About(),
         ],

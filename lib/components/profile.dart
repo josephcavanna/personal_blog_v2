@@ -4,7 +4,12 @@ import 'package:personal_blog_v2/constants.dart';
 
 class Profile extends StatelessWidget {
   static const String id = 'profile';
-  const Profile({Key? key}) : super(key: key);
+  const Profile({
+    required this.radius,
+    Key? key,
+  }) : super(key: key);
+
+  final double radius;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ class Profile extends StatelessWidget {
                 child: CircleAvatar(
                     backgroundImage: AssetImage('images/profilePhoto.webp'),
                     backgroundColor: Colors.white,
-                    radius: 175),
+                    radius: radius),
               ),
               SizedBox(height: 35),
               Text('FLUTTER DEVELOPER', style: Constants.kJobTitle),
