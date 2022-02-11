@@ -14,10 +14,23 @@ class Profile extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              CircleAvatar(
-                  backgroundImage: AssetImage('images/profilePhoto.webp'),
-                  backgroundColor: Colors.white,
-                  radius: 125),
+              Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: [
+                    BoxShadow(
+                        blurRadius:15 ,
+                        color: Colors.black26,
+                        spreadRadius: 2,
+                        offset: Offset(5, 5),
+                    ),
+                  ]
+                ),
+                child: CircleAvatar(
+                    backgroundImage: AssetImage('images/profilePhoto.webp'),
+                    backgroundColor: Colors.white,
+                    radius: 175),
+              ),
               SizedBox(height: 35),
               Text('FLUTTER DEVELOPER', style: Constants.kJobTitle),
               SizedBox(height: 15),

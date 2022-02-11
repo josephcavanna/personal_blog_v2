@@ -11,17 +11,15 @@ class DesktopContent extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
           colors: [
-            Colors.pink,
-            Colors.orangeAccent,
-            Colors.deepPurple,
+            Colors.indigo,
+            Colors.redAccent,
           ],
           stops: [
             0.1,
-            1000,
-            2000,
+            0.9,
           ],
         ),
       ),

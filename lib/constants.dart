@@ -9,9 +9,9 @@ class Constants {
 
   // text
   static const kProjectText = TextStyle(color: Colors.black54);
-  static const kProjectTitle = TextStyle(fontSize: 20, color: Colors.purple);
+  static const kProjectTitle = TextStyle(fontSize: 20, color: Colors.deepPurple);
   static const kProfileTitle = TextStyle(fontSize: 30, color: Colors.black54, fontWeight: FontWeight.w100);
-  static const kJobTitle = TextStyle(fontSize: 20, color: Colors.purple, letterSpacing: 4, fontWeight: FontWeight.w500);
+  static const kJobTitle = TextStyle(fontSize: 20, color: Colors.deepPurple, letterSpacing: 4, fontWeight: FontWeight.w400);
   static const kWithFlutter = TextStyle(fontSize: 14, color: Colors.white, backgroundColor: Colors.transparent);
   static const kEmailText = TextStyle(color: Colors.white);
   static const kHomePageText = TextStyle(

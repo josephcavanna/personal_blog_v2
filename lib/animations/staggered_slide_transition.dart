@@ -18,7 +18,7 @@ class StaggeredSlideTransitionState
     extends AnimationControllerState<StaggeredSlideTransition> {
   StaggeredSlideTransitionState(Duration duration) : super(duration);
   late final Animation<Offset> _offsetAnimation = Tween<Offset>(
-    begin: const Offset(4, 0),
+    begin: Offset(widget.width, 0),
     end: Offset.zero,
   ).animate(
     CurvedAnimation(

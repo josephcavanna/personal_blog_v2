@@ -12,17 +12,15 @@ class MobileContent extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
           colors: [
-            Colors.pink,
-            Colors.orangeAccent,
-            Colors.deepPurple.shade700,
+            Colors.indigoAccent,
+            Colors.redAccent,
           ],
           stops: [
             0.1,
-            1000.0,
-            2000.0,
+            0.9,
           ],
         ),
       ),
