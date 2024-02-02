@@ -4,6 +4,8 @@ import 'package:personal_blog_v2/screens/about.dart';
 import 'package:personal_blog_v2/screens/projects.dart';
 import 'package:personal_blog_v2/screens/standard_content.dart';
 
+import '../constants.dart';
+
 class DesktopContent extends StatelessWidget {
   const DesktopContent({Key? key}) : super(key: key);
   @override
@@ -14,8 +16,8 @@ class DesktopContent extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Colors.indigo,
-            Colors.redAccent,
+            Constants.kGradientOne,
+            Constants.kGradientTwo,
           ],
           stops: [
             0.1,
@@ -25,7 +27,7 @@ class DesktopContent extends StatelessWidget {
       ),
       child: StandardContent(
         blogPages: [
-          Profile(radius: 200,),
+          Profile(radius: 160,),
           Projects(scrollDirection: Axis.horizontal),
           About(),
         ],

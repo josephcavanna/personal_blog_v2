@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_blog_v2/animations/staggered_fade_transition.dart';
 import 'package:personal_blog_v2/animations/staggered_slide_transition.dart';
 import 'package:personal_blog_v2/components/social_icons.dart';
+import '../components/link_button.dart';
 import '../constants.dart';
 
 class StandardContent extends StatefulWidget {
@@ -22,7 +23,8 @@ class _StandardContentState extends State<StandardContent> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return SingleChildScrollView(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Padding(
@@ -85,25 +87,36 @@ class _StandardContentState extends State<StandardContent> {
             ),
           ),
           StaggeredSlideTransition(
-              index: 3,
-              child: widget.blogPages[pageIndex],
-              width: 6),
+              index: 3, child: widget.blogPages[pageIndex], width: 6),
           StaggeredFadeTransition(
             index: 4,
             child: Material(
               color: Colors.transparent,
               child: Padding(
-                padding:  const EdgeInsets.only(top: 20.0, bottom: 40),
+                padding: const EdgeInsets.only(top: 20.0, bottom: 40),
                 child: Column(
                   children: [
                     SocialIcons(),
-                    Text('Built with Flutter', style: Constants.kWithFlutter),
-                    Text('© 2022', style: Constants.kWithFlutter),
+                    Text('Built with Flutter',
+                            style: Constants.kWithFlutter),
+                        SizedBox(height: 5,),
+                        LinkButton(
+                          buttonText: 'view source code',
+                          url: 'https://github.com/josephcavanna/personal_blog_v2',
+                          backgroundColor: Colors.black,
+                          hoverColor: Colors.grey[800],
+                          radius: 8,
+                          padding: 5,
+                        ),
+                    SizedBox(height: 5,),
+                    Text('© 2024', style: Constants.kWithFlutter),
                   ],
                 ),
-              ),),
+              ),
+            ),
           ),
         ],
-      );
+      ),
+    );
   }
 }

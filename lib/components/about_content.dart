@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:personal_blog_v2/constants.dart';
+import 'package:personal_blog_v2/screens/reset_password.dart';
 
 class AboutContent extends StatelessWidget {
   const AboutContent({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class AboutContent extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(18.0),
       child: Container(
-        height: 325,
+        height: 375,
         width: 390,
         child: Center(
           child: Material(
@@ -20,16 +21,23 @@ class AboutContent extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('ABOUT', style: Constants.kProjectTitle,),
-                  SizedBox(height: 15,),
                   Text(
-                    'Joseph is a Spanish/Australian flutter developer living in Finland. His journey with Flutter & Dart started in October 2020, learning to code in his spare time. This led him to building his first app with Flutter: BabyGrowth.',
+                    'ABOUT',
+                    style: Constants.kProjectTitle,
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    'Joseph is a Spanish/Australian flutter developer living in the Netherlands. His journey with Flutter & Dart started in October 2020, learning to code in his spare time. This led him to building his first app with Flutter: BabyGrowth.',
                     textAlign: TextAlign.center,
                     style: Constants.kAboutStyle,
                   ),
-                  SizedBox(height: 15,),
+                  SizedBox(
+                    height: 15,
+                  ),
                   Text(
-                    'He is currently pursuing a career in app development, as he continues to learn and build things with Flutter. He will soon be sharing the things he learns with others on his youtube channel.',
+                    'He is currently pursuing a career in app development, as he continues to learn and build things with Flutter.',
                     textAlign: TextAlign.center,
                     style: Constants.kAboutStyle,
                   ),

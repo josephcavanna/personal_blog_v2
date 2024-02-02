@@ -9,9 +9,9 @@ class Constants {
 
   // text
   static const kProjectText = TextStyle(color: Colors.black54);
-  static const kProjectTitle = TextStyle(fontSize: 20, color: Colors.deepPurple);
-  static const kProfileTitle = TextStyle(fontSize: 30, color: Colors.black54, fontWeight: FontWeight.w100);
-  static const kJobTitle = TextStyle(fontSize: 20, color: Colors.deepPurple, letterSpacing: 4, fontWeight: FontWeight.w400);
+  static const kProjectTitle = TextStyle(fontSize: 20, color: Colors.indigoAccent);
+  static const kProfileTitle = TextStyle(fontSize: 24, color: Colors.white, fontWeight: FontWeight.w100);
+  static const kJobTitle = TextStyle(fontSize: 20, color: Colors.indigo, letterSpacing: 4, fontWeight: FontWeight.w400);
   static const kWithFlutter = TextStyle(fontSize: 14, color: Colors.white, backgroundColor: Colors.transparent);
   static const kEmailText = TextStyle(color: Colors.white);
   static const kHomePageText = TextStyle(
@@ -19,6 +19,10 @@ class Constants {
       color: Colors.white,
       fontWeight: FontWeight.w300,
       letterSpacing: 3);
+
+  // background gradient
+  static const kGradientOne = Colors.indigo;
+  static const kGradientTwo = Colors.blue;
 
   // backgrounds
   static const kProfileBackground = Colors.white;

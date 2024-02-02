@@ -6,11 +6,19 @@ class LinkButton extends StatefulWidget {
   const LinkButton({
     required this.url,
     required this.buttonText,
+    this.backgroundColor,
+    this.hoverColor,
+    this.radius,
+    this.padding,
     Key? key,
   }) : super(key: key);
 
   final String url;
   final String buttonText;
+  final Color? backgroundColor;
+  final Color? hoverColor;
+  final double? radius;
+  final double? padding;
 
   @override
   _LinkButtonState createState() => _LinkButtonState();
@@ -23,11 +31,11 @@ class _LinkButtonState extends State<LinkButton> {
       color: Colors.transparent,
       child: MaterialButton(
         minWidth: 125,
-        color: Colors.pink.shade400,
-        hoverColor: Colors.pinkAccent,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(20))),
+        color: widget.backgroundColor ?? Colors.indigo,
+        hoverColor: widget.hoverColor ?? Colors.indigo[400],
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(widget.radius ?? 20))),
         child: Padding(
-          padding: const EdgeInsets.all(10.0),
+          padding: EdgeInsets.all(widget.padding ?? 10.0),
           child: Text(widget.buttonText,
               style: Constants.kEmailText),
         ),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:personal_blog_v2/components/projects_list.dart';
 
 class Projects extends StatelessWidget {
-  static const String id = 'projects';
+  static const String id = '/projects';
   const Projects({
     this.scrollDirection,
     Key? key,

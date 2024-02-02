@@ -36,14 +36,14 @@ class Profile extends StatelessWidget {
                     backgroundColor: Colors.white,
                     radius: radius),
               ),
-              SizedBox(height: 35),
+              SizedBox(height: 25),
               Text('FLUTTER DEVELOPER', style: Constants.kJobTitle),
               SizedBox(height: 15),
               Text(
                 'Joseph Cavanna',
                 style: Constants.kProfileTitle,
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 25),
               LinkButton(
                 buttonText: 'info@jcavanna.dev',
                 url: 'mailto:<info@jcavanna.dev>?subject=&body=',
