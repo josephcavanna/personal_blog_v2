@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import '../methods/auth.dart';
 
 class ResetPassword extends StatefulWidget {
-  static const String id = '/reset-password';
+  static const String id = '/update_password';
   const ResetPassword({Key? key}) : super(key: key);
 
   @override
@@ -11,6 +12,7 @@ class ResetPassword extends StatefulWidget {
 class _ResetPasswordState extends State<ResetPassword> {
   TextEditingController repeatPasswordController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  final auth = Auth();
 
   Widget formField(String labelText, TextEditingController controller) {
     return TextField(
@@ -38,15 +40,64 @@ class _ResetPasswordState extends State<ResetPassword> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SingleChildScrollView(
-        child: Container(
-          color: Colors.blue,
-          child: Column(
-            children: [
-              formField('Password', passwordController),
-              formField('Repeat password', repeatPasswordController),
-            ],
+    final email = auth.currentUserEmail();
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      body: Center(
+        child: Form(
+          child: SizedBox(
+            width: 400,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: const AssetImage('images/appstore.jpg'),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Text(
+                  email ?? 'Bedtime Story AI - Password reset',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 14,
+                  ),
+                ),
+                SizedBox(
+                  height: 40,
+                ),
+                formField('Password', passwordController),
+                SizedBox(
+                  height: 20,
+                ),
+                formField('Repeat password', repeatPasswordController),
+                SizedBox(
+                  height: 20,
+                ),
+                MaterialButton(
+                  onPressed: () {
+                    if (passwordController.text ==
+                        repeatPasswordController.text) {
+                      // Update password
+                      auth.updatePassword(passwordController.text);
+                    } else {
+                      showAboutDialog(
+                        context: context,
+                        children: const [
+                          Text('Passwords do not match'),
+                        ],
+                      );
+                    }
+                  },
+                  child: const Text(
+                    'Confirm',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
       ),

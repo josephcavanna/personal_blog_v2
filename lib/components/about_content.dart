@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:personal_blog_v2/constants.dart';
-import 'package:personal_blog_v2/screens/reset_password.dart';
 
 class AboutContent extends StatelessWidget {
   const AboutContent({Key? key}) : super(key: key);

@@ -5,6 +5,7 @@ import '../responsive_content/desktop_content.dart';
 import '../responsive_content/tablet_content.dart';
 
 class HomePage extends StatefulWidget {
+  static const String id = '/home';
   const HomePage({Key? key}) : super(key: key);
 
   @override
