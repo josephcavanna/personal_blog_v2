@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:personal_blog_v2/routing/routes_name.dart';
 import '../methods/auth.dart';
 
 class ResetPassword extends StatefulWidget {
-  static const String id = '/update_password';
+  static const String id = RoutesName.resetPassword;
   const ResetPassword({Key? key}) : super(key: key);
 
   @override
