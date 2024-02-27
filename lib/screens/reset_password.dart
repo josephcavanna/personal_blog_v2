@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:personal_blog_v2/routing/routes_name.dart';
 import '../methods/auth.dart';
+import 'home_page.dart';
 
 class ResetPassword extends StatefulWidget {
   static const String id = RoutesName.resetPassword;
@@ -14,9 +15,19 @@ class _ResetPasswordState extends State<ResetPassword> {
   TextEditingController repeatPasswordController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   final auth = Auth();
+  final _formKey = GlobalKey<FormState>();
 
   Widget formField(String labelText, TextEditingController controller) {
-    return TextField(
+    return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter a new password';
+        } else if (passwordController.text != repeatPasswordController.text) {
+          return 'Passwords do not match';
+        } else {
+          return null;
+        }
+      },
       style: const TextStyle(color: Colors.white),
       controller: controller,
       decoration: InputDecoration(
@@ -41,11 +52,11 @@ class _ResetPasswordState extends State<ResetPassword> {
 
   @override
   Widget build(BuildContext context) {
-    final email = auth.currentUserEmail();
     return Scaffold(
       backgroundColor: Colors.blue,
       body: Center(
         child: Form(
+          key: _formKey,
           child: SizedBox(
             width: 400,
             child: Column(
@@ -60,7 +71,7 @@ class _ResetPasswordState extends State<ResetPassword> {
                   height: 20,
                 ),
                 Text(
-                  email ?? 'Bedtime Story AI - Password reset',
+                  supabase.auth.currentUser?.email ?? 'No token',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 14,
@@ -69,29 +80,16 @@ class _ResetPasswordState extends State<ResetPassword> {
                 SizedBox(
                   height: 40,
                 ),
-                formField('Password', passwordController),
+                formField('New password', passwordController),
                 SizedBox(
                   height: 20,
                 ),
-                formField('Repeat password', repeatPasswordController),
+                formField('Confirm password', repeatPasswordController),
                 SizedBox(
                   height: 20,
                 ),
                 MaterialButton(
-                  onPressed: () {
-                    if (passwordController.text ==
-                        repeatPasswordController.text) {
-                      // Update password
-                      auth.updatePassword(passwordController.text);
-                    } else {
-                      showAboutDialog(
-                        context: context,
-                        children: const [
-                          Text('Passwords do not match'),
-                        ],
-                      );
-                    }
-                  },
+                  onPressed: resetPassword,
                   child: const Text(
                     'Confirm',
                     style: TextStyle(color: Colors.white),
@@ -103,5 +101,40 @@ class _ResetPasswordState extends State<ResetPassword> {
         ),
       ),
     );
+  }
+
+  resetPassword() async {
+    if (_formKey.currentState!.validate()) {
+      final response = await auth.updatePassword(passwordController.text);
+      if (response == null) {
+        await auth.signOut();
+        showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: const Text('Password updated'),
+                content:
+                    const Text('Press OK to be redirected to the home page.'),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                      Navigator.push(context, MaterialPageRoute(builder: (context) {
+          return const HomePage();
+        }));
+                    },
+                    child: const Text('OK'),
+                  ),
+                ],
+              );
+            });
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(response),
+          ),
+        );
+      }
+    }
   }
 }

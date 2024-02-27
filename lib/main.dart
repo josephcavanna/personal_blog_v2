@@ -4,7 +4,6 @@ import 'package:personal_blog_v2/routing/home_router_delegate.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:personal_blog_v2/api/api_key.dart';
 import 'package:url_strategy/url_strategy.dart';
-
 import 'routing/home_route_information_parser.dart';
 
 void main() async {
@@ -21,7 +20,7 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) { 
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       scrollBehavior: CustomScrollBehavior(),

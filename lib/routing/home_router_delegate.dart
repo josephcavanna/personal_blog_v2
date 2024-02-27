@@ -5,6 +5,7 @@ import 'package:personal_blog_v2/screens/home_page.dart';
 import 'package:personal_blog_v2/screens/reset_password.dart';
 
 import '../screens/about.dart';
+import '../screens/forgot_password.dart';
 import '../screens/projects.dart';
 
 class HomeRouterDelegate extends RouterDelegate<HomeRoutePath>
@@ -17,10 +18,7 @@ class HomeRouterDelegate extends RouterDelegate<HomeRoutePath>
 
   @override
   HomeRoutePath get currentConfiguration {
-    print('pathName is: $pathName');
-    print(pathName == null);
     if (isError) {
-      print('isError');
       return HomeRoutePath.unknown();
     }
     return pathName == null
@@ -55,7 +53,9 @@ class HomeRouterDelegate extends RouterDelegate<HomeRoutePath>
                     ? Projects()
                     : pathName == RoutesName.resetPassword
                         ? ResetPassword()
-                        : HomePage(),
+                        : pathName == RoutesName.forgotPassword
+                            ? ForgotPassword()
+                            : HomePage(),
             name: pathName,
           )
         else if (isError)

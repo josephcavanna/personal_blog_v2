@@ -37,7 +37,7 @@ class Profile extends StatelessWidget {
                     radius: radius),
               ),
               SizedBox(height: 25),
-              Text('FLUTTER DEVELOPER', style: Constants.kJobTitle),
+              Text('SOFTWARE DEVELOPER', style: Constants.kJobTitle),
               SizedBox(height: 15),
               Text(
                 'Joseph Cavanna',
