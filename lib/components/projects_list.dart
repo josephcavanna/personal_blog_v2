@@ -7,8 +7,8 @@ class ProjectsList {
 
   List<Widget> projectsList = [
     ProjectCard(
-      title: 'Bedtime Story AI', 
-      description: 'Bedtime Story AI is an app that allows you to type in a title and procedes to generate a short story for you.', 
+      title: 'Goodnight Story AI', 
+      description: 'Goodnight Story AI is an app that allows you to type in a title and procedes to generate a short story for you.', 
       preview: CircleAvatar(
         backgroundImage: AssetImage('images/appstore.jpg'),
         backgroundColor: Colors.black26,
@@ -21,7 +21,7 @@ class ProjectsList {
               index: 2,
               child: LinkButton(
                 buttonText: 'Android',
-                url: '',
+                url: 'https://play.google.com/store/apps/details?id=dev.jcavanna.bedtime_story_ai',
               ),
             ),
             SizedBox(width: 10),
@@ -29,7 +29,7 @@ class ProjectsList {
               index: 3,
               child: LinkButton(
                 buttonText: 'iOS',
-                url: '',
+                url: 'https://apps.apple.com/nl/app/goodnight-story-ai/id6479606469',
               ),
             ),
           ],
