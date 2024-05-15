@@ -28,7 +28,7 @@ class AboutContent extends StatelessWidget {
                     height: 15,
                   ),
                   Text(
-                    'Joseph is a Spanish/Australian software developer living in the Netherlands. His journey started with Flutter & Dart in October 2020, learning to code in his spare time. This led him to building his first app with Flutter: BabyGrowth.',
+                    'Joseph is a Spanish/Australian software developer living in the Netherlands. His journey started with Flutter & Dart in October 2020, learning to code in his spare time. This led him to build his first app with Flutter: BabyGrowth.',
                     textAlign: TextAlign.center,
                     style: Constants.kAboutStyle,
                   ),
