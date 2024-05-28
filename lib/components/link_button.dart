@@ -31,8 +31,8 @@ class _LinkButtonState extends State<LinkButton> {
       color: Colors.transparent,
       child: MaterialButton(
         minWidth: 125,
-        color: widget.backgroundColor ?? Colors.indigo,
-        hoverColor: widget.hoverColor ?? Colors.indigo[400],
+        color: widget.backgroundColor ?? Constants.kButtonBackground,
+        hoverColor: widget.hoverColor ?? Constants.kButtonBackgroundHover,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(widget.radius ?? 20))),
         child: Padding(
           padding: EdgeInsets.all(widget.padding ?? 10.0),

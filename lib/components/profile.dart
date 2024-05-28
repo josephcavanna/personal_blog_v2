@@ -32,12 +32,12 @@ class Profile extends StatelessWidget {
                   ]
                 ),
                 child: CircleAvatar(
-                    backgroundImage: AssetImage('images/profilePhoto.webp'),
+                    backgroundImage: AssetImage('images/joseph.jpeg'),
                     backgroundColor: Colors.white,
                     radius: radius),
               ),
               SizedBox(height: 25),
-              Text('SOFTWARE DEVELOPER', style: Constants.kJobTitle),
+              Text('FLUTTER DEVELOPER', style: Constants.kJobTitle),
               SizedBox(height: 15),
               Text(
                 'Joseph Cavanna',

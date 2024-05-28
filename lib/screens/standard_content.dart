@@ -103,7 +103,7 @@ class _StandardContentState extends State<StandardContent> {
                         LinkButton(
                           buttonText: 'view source code',
                           url: 'https://github.com/josephcavanna/personal_blog_v2',
-                          backgroundColor: Colors.black,
+                          backgroundColor: Constants.kSourceCodeButtonBackground,
                           hoverColor: Colors.grey[800],
                           radius: 8,
                           padding: 5,

@@ -22,6 +22,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) { 
     return MaterialApp.router(
+      color: Color(0xFFE6D8D8),
       debugShowCheckedModeBanner: false,
       scrollBehavior: CustomScrollBehavior(),
       routerDelegate: HomeRouterDelegate(),

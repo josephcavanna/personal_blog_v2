@@ -27,7 +27,7 @@ class ProjectCard extends StatelessWidget {
     for (var keywordString in keywordStrings!) {
       keywords.add(Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
-        child: Text(keywordString.toUpperCase(), style: TextStyle(color: Colors.indigoAccent, fontSize: 12, letterSpacing: -0.5), ),
+        child: Text(keywordString.toUpperCase(), style: TextStyle(color: Constants.kProjectKeywordsColor, fontSize: 12, letterSpacing: -0.5), ),
       ));
     }
     return StaggeredSlideTransition(
