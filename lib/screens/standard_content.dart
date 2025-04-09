@@ -109,7 +109,7 @@ class _StandardContentState extends State<StandardContent> {
                           padding: 5,
                         ),
                     SizedBox(height: 5,),
-                    Text('© 2024', style: Constants.kWithFlutter),
+                    Text('© ${DateTime.now().year}', style: Constants.kWithFlutter),
                   ],
                 ),
               ),
