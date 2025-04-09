@@ -36,7 +36,7 @@ class AboutContent extends StatelessWidget {
                     height: 15,
                   ),
                   Text(
-                    'He is currently pursuing a career in software development, with a focus on mobile app development.',
+                    'Joseph is currently working as an App developer at SportBit Manager.',
                     textAlign: TextAlign.center,
                     style: Constants.kAboutStyle,
                   ),
