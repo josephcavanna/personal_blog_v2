@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_blog_v2/components/url_text_widget.dart';
 import 'package:personal_blog_v2/constants.dart';
 
 class AboutContent extends StatelessWidget {
@@ -28,18 +29,14 @@ class AboutContent extends StatelessWidget {
                     height: 15,
                   ),
                   Text(
-                    'Joseph is a Spanish/Australian software developer living in the Netherlands. His journey started with Flutter & Dart in October 2020, learning to code in his spare time. This led him to build his first app with Flutter: BabyGrowth.',
+                    'Joseph is a Spanish/Australian Flutter developer living in the Netherlands. His journey started with Flutter & Dart in October 2020, learning to code in his spare time. This led him to build his first app with Flutter: BabyGrowth.',
                     textAlign: TextAlign.center,
                     style: Constants.kAboutStyle,
                   ),
                   SizedBox(
                     height: 15,
                   ),
-                  Text(
-                    'Joseph is currently working as an App developer at SportBit Manager.',
-                    textAlign: TextAlign.center,
-                    style: Constants.kAboutStyle,
-                  ),
+                 UrlTextWidget(preText: 'Joseph is currently working as an App Developer at ', hyperlinkText: 'SportBit Manager.', url: 'https://www.sportbitmanager.nl'),
                 ],
               ),
             ),
